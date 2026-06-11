@@ -1,25 +1,21 @@
 # surgeWM-yolov26
 Based on the cholecTrack20 dataset, the YOLOv26 model is used to detect sudden instrument changes in the generated surgical videos.
-# CholecTrack20 YOLO Tracking Pipeline
-
-This project converts the **CholecTrack20** dataset to YOLO format, trains detection/tracking models, and performs video tracking with detailed analysis of surgical instruments.
-
-## Features
-
-- Convert CholecTrack20 dataset frames and annotations to YOLO format.
-- Generate class-balanced training dataset with oversampling.
-- Train YOLO models (YOLOv26m or other variants) for instrument detection.
-- Track instruments in videos using ByteTrack or BotSort tracker.
-- Compute statistics for stable class switches (instrument changes).
-- Save visualizations, frame-level CSV, track-level JSON, and summaries.
-
+# 数据集
+YOLO26 训练部分使用 CholecTrack20 数据集，用于手术器械检测与追踪任务。
+# 项目结构
+```bash
+convert_cholecTrack20_to_yolo_track.py #把数据集转换为yolo训练的格式
+yolo.py #对yolo26训练
+track.py #用已训练好的yolo模型对目标视频进行追踪，并保存每条轨迹的信息
+count_instrument_changes.py #检测被测视频出现多少次器械突变
+# 训练
+cd yolov26
+python yolo.py
 ## Installation
-
 ```bash
 # Clone the repository
-git clone <your-repo-url>
-cd <your-repo>
-
-# Install dependencies
-pip install -r requirements.txt
-
+git clone https://github.com/vamos-jpg/surgeWM-yolov26
+# 安装yolo所需依赖
+pip install ultralytics
+python -c "from ultralytics import YOLO; print('Ultralytics installed successfully')"
+# 训练效果
