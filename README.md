@@ -23,7 +23,7 @@
 > 展示 YOLO 训练过程中的关键指标变化，可用于观察收敛情况、精度趋势与训练稳定性。
 
 <p align="center">
-  <img src="assert/yolo_results.png" alt="YOLO Training Results" width="850">
+  <img src="assert/yolo.png" alt="YOLO Training Results" width="850">
 </p>
 
 ---
